@@ -1,0 +1,12 @@
+﻿cssselect2==0.7.0
+lxml==4.9.1
+Pillow==9.3.0
+PyQt6==6.4.0
+PyQt6-Qt6==6.4.0
+PyQt6-sip==13.4.0
+reportlab==3.6.12
+svglib==1.4.1
+tinycss2==1.2.1
+uuid==1.30
+webencodings==0.5.1
+webptools==0.0.9
