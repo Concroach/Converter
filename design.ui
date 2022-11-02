@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>661</width>
-    <height>362</height>
+    <width>730</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="cursor">
@@ -18,7 +18,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>../../OneDrive/YL/convert/logo.ico</normaloff>../../OneDrive/YL/convert/logo.ico</iconset>
+    <normaloff>../../../.designer/backup/logo.ico</normaloff>../../../.designer/backup/logo.ico</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_2">
@@ -695,10 +695,30 @@
         </property>
        </widget>
       </item>
-      <item>
-       <widget class="QLabel" name="label">
+      <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+       <widget class="QPushButton" name="open_dir">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
         <property name="text">
-         <string/>
+         <string>Открыть папку с изображением</string>
+        </property>
+        <property name="checkable">
+         <bool>false</bool>
+        </property>
+        <property name="checked">
+         <bool>false</bool>
+        </property>
+        <property name="autoExclusive">
+         <bool>false</bool>
         </property>
        </widget>
       </item>
