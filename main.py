@@ -11,8 +11,8 @@ from reportlab.graphics import renderPM
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
-        # uic.loadUi('design.ui', self)
-        uic.loadUi(r'C:\Users\Artur\OneDrive\YL\convert\design.ui', self)
+        uic.loadUi('design.ui', self)
+        # uic.loadUi(r'C:\Users\Artur\OneDrive\YL\convert\design.ui', self)
         self.initUI()
         
 
