@@ -8,11 +8,12 @@ from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPM
 
 
+
 class Window(QMainWindow):
     def __init__(self):
         super().__init__()
-        # uic.loadUi('design.ui', self)
-        uic.loadUi(r'C:\Users\Artur\OneDrive\YL\convert\design.ui', self)
+        uic.loadUi('design.ui', self)
+        # uic.loadUi(r'C:\Users\Artur\OneDrive\YL\convert\design.ui', self)
         self.initUI()
         
 
@@ -22,14 +23,19 @@ class Window(QMainWindow):
         self.browse.clicked.connect(self.browse_file)
         # Кнопка скачивания фото
         self.convert.clicked.connect(self.convert_func)
-    
-    
+        self.open_dir.setEnabled(False)
+        self.open_dir.clicked.connect(self.open_directory)
+
+
     # Функция загрузки файла в программу
     def browse_file(self):
         self.lb_output.clear()
         self.fname = QFileDialog.getOpenFileName(self, 'Выберите файл')
         self.filetype = list(self.fname)
         self.filetype = self.filetype[0].split('.')
+        # Создаём переменную с путём до папки
+        self.dir = self.filetype[0].split('/')[0:-1]
+        self.directory = '/'.join(self.dir)
         # root - путь до файла
         self.root = self.fname[0]
         # format - разрешение файла
@@ -91,11 +97,17 @@ class Window(QMainWindow):
                     self.convert2ascii()
             else:
                 QMessageBox.about(self, 'Ошибка', "Не выбран формат для конвертации")
+        self.open_dir.setEnabled(True)
+
+
+    def open_directory(self):
+        os.startfile(self.directory)
 
 
     def same_formats(self):
-        QMessageBox.about(self, 'Ошибка', "Выбраны одинаковые форматы")        
-
+        self.lb_output.setText('Ошибка, одинаковые форматы')
+        QMessageBox.about(self, 'Ошибка', "Выбраны одинаковые форматы")
+        
 
     def convert2png(self):
         if self.format == 'jpg':
